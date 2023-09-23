@@ -1,30 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="stylesheet.css">
-</head>
-<body>
-  <form class="hidden" action="">
-    <div class="form-container-1">
-      <label>Input your <em>first name</em> below!</label>
-      <input id="first-name" type="text" id="first-name" name="name" placeholder="John...">
-      <label for="last-name">Input your <em>last name</em> below!</label>
-      <input class="input" type="text" id="last-name" name="name" placeholder="Smith...">
-      <label for="pages">Input the number of <em>pages</em> below!</label>
-    <input class="input" type="text" id="pages" name="pages" placeholder="381...">
-    </div>
-    <div class="form-container-2">  
-      <label class="large-label" for="yes">Have you read this book?</label>
-      <input type="radio" name="is-read" id="yes" value="yes">Yes, I've read this book
-      <input type="radio" name="is-read" id="no" value="no">No, I haven't read this book
-      <button type="submit" onclick="radioChoice()">Submit</button>
-    </div>
-  </form>
-  <button class="add-book-button">Add a new book?</button>
+.card {
+    display: flex;
+    height: 16rem;
+    width: 26rem;
+    background-color: peachpuff;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    padding: .5rem;
+    gap: 1rem;
+}
 
-  <script src="javascript.js"></script>
-</body>
-</html>
+body, html {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+
+}
+
+.form-container-1 {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.form-container-2 {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    position: relative;
+    top: .45rem;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+   
+}
+
+.large-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}
+
+.add-book-button {
+    display: flex;
+    justify-content: center;
+
+}
+
+.functionality-button {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.delete-button, .readStatus, .change-read-status{
+    width: 9rem;
+    height: 3rem;
+}
+
+.card-button {
+    display: flex;
+    
+}
+
+.card-div {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.card>:first-child {
+    width: 40rem;
+}
