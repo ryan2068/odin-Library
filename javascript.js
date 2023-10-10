@@ -98,10 +98,14 @@ form.addEventListener('submit', (e) => {
     notReadStatus = document.createElement("input")
     isReadLabel = document.createElement("label")
     isReadSpan = document.createElement("span")
+    notReadStatusSpan = document.createElement("span")
+    notReadStatusSpan.textContent = 'No'
     isReadSpan.textContent = 'Yes'
     isReadLabel.textContent = 'Have I read this book?'
     readStatus.textContent = 'Yes'
-    notReadStatus.textContent = 'No'
+    notReadStatus.classList.add("NotReadStatus")
+    notReadStatus.classList.add("NotReadStatusInput")
+    notReadStatusSpan.classList.add("NotReadStatus")
     isReadLabel.classList.add("isReadLabel")
     isReadSpan.classList.add("readStatus")
     readStatus.classList.add("readStatus")
@@ -129,6 +133,7 @@ form.addEventListener('submit', (e) => {
     
     cardDiv.appendChild(readStatus)
     cardDiv.appendChild(notReadStatus)
+    cardDiv.appendChild(notReadStatusSpan)
     
 
 

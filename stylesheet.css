@@ -99,13 +99,24 @@ form {
 
 
 
-.readStatus {
+.readStatus, .NotReadStatus {
     display: flex;
-    width: 50px;
+    width: 60px;
 }
+
+
 
 span {
     width: 30px;
     position: relative;
     top: 2vh;
+}
+
+.NotReadStatus {
+    position: relative;
+}
+
+.NotReadStatusInput {
+    position: relative;
+    top: 4vh;
 }
