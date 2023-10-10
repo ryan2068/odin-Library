@@ -1,19 +1,18 @@
+//selects all the dom elements
 form = document.querySelector("form")
 firstName = document.querySelector("#first-name")
 lastName = document.querySelector("#last-name")
 pages = document.querySelector("#pages")
-
 read = document.querySelector("#yes")
 isNotRead = document.querySelector("#no")
 isRead = document.getElementsByName("is-read")
 addBookButton = document.querySelector(".add-book-button")
-
-
 cardContainer = document.createElement("div")
 cardContainer.classList.add("card-container")
 document.body.appendChild(cardContainer)
 
 
+//returns if the book has been read or not
 function radioChoice() {
     if (read.checked === true) {  
         hasBeenRead = true
@@ -69,78 +68,68 @@ form.addEventListener('submit', (e) => {
     cardContainer.appendChild(card)
 
 
+    deleteButton = document.createElement("button")
+    deleteButton.classList.add("delete-button", "card-button")
+    deleteButton.textContent += "Delete this book?"
+
+    
 
 
+    deleteButton.addEventListener('click', (e) => {
+        console.log("Card Deleted")
+        e.target.parentNode.parentNode.remove()
+        
+
+
+
+    })
     
     
 
 
 
-    library.forEach((i, index) => {
             
-        deleteButton = document.createElement("button")
-        deleteButton.classList.add("delete-button", "card-button")
-        deleteButton.textContent += "Delete this book?"
-        deleteButton.setAttribute("data-num", index)
 
-        changeReadStatus = document.createElement("button")
-        changeReadStatus.classList.add("change-read-status", "card-button")
-        changeReadStatus.textContent += "Change read status?"
-        
-        readStatus = document.createElement("button")
-        readStatus.classList.add("readStatus", "card-button")
-        readStatus.textContent = radioChoice()
-        
-
-        cardDiv = document.createElement("div")
-        cardDiv.classList.add("card-div")
-    
-        changeReadStatus.addEventListener("click", (e) => {
-            if (readStatus.textContent === "Read: Yes.") {
-                readStatus.textContent = "Read: No."
-            }
-            else if (readStatus.textContent === "Read: No.") {
-                readStatus.textContent = "Read: Yes."
-            
-            }
-
-
-
-        deleteButton.addEventListener('click', (e) => {
-            console.log("i work")
-            e.target.parentNode.remove()
-            
-        })
-                
 
     
-        })
 
-        
+    //adds a label, and read or not read radio buttons 
+    readStatus = document.createElement("input")
+    notReadStatus = document.createElement("input")
+    isReadLabel = document.createElement("label")
+    isReadSpan = document.createElement("span")
+    isReadSpan.textContent = 'Yes'
+    isReadLabel.textContent = 'Have I read this book?'
+    readStatus.textContent = 'Yes'
+    notReadStatus.textContent = 'No'
+    isReadLabel.classList.add("isReadLabel")
+    isReadSpan.classList.add("readStatus")
+    readStatus.classList.add("readStatus")
+    
+    readStatus.type = 'radio'
+    notReadStatus.type = 'radio'
+
     
 
+    cardDiv = document.createElement("div")
+    cardDiv.classList.add("card-div")
+
+
 
 
         
-    });
+
+
+        
     card.appendChild(cardDiv)
     cardDiv.appendChild(deleteButton)
-    cardDiv.appendChild(changeReadStatus)
+    cardDiv.appendChild(isReadLabel)
+    
+    cardDiv.appendChild(isReadSpan)
+    
     cardDiv.appendChild(readStatus)
-
+    cardDiv.appendChild(notReadStatus)
     
-
-
-
-
-    
-    
-
-    
-
-
-
-
 
 
 
@@ -152,13 +141,7 @@ form.addEventListener('submit', (e) => {
 
     
 
-    
-
 })
-
-
-
-
 
 
 

@@ -5,7 +5,7 @@
     background-color: peachpuff;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    border: .5px solid white;
     padding: .5rem;
     gap: 1rem;
 }
@@ -17,6 +17,8 @@ body, html {
     flex-direction: column;
     gap: 2rem;
     padding: 1rem;
+    background: linear-gradient(#f9a7a7, #828ade);
+
 }
 
 form {
@@ -71,7 +73,7 @@ form {
     justify-content: center;
 }
 
-.delete-button, .readStatus, .change-read-status{
+.delete-button{
     width: 9rem;
     height: 3rem;
 }
@@ -89,4 +91,21 @@ form {
 
 .card>:first-child {
     width: 40rem;
+}
+
+.isReadLabel  {
+    display: flex;
+}
+
+
+
+.readStatus {
+    display: flex;
+    width: 50px;
+}
+
+span {
+    width: 30px;
+    position: relative;
+    top: 2vh;
 }
