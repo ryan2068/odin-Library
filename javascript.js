@@ -7,6 +7,7 @@ read = document.querySelector("#yes")
 isNotRead = document.querySelector("#no")
 isRead = document.getElementsByName("is-read")
 addBookButton = document.querySelector(".add-book-button")
+errorSpan = document.querySelector('.error')
 cardContainer = document.createElement("div")
 cardContainer.classList.add("card-container")
 document.body.appendChild(cardContainer)
@@ -39,10 +40,30 @@ addBookButton.addEventListener("click", function(e) {
 })
 
 
+function emptyString () {
+    if (firstName.validity.valueMissing) {
+        errorSpan.textContent = 'Please enter more than 1 character.'
+    }
+}
 
-console.log("this is connected to github")
+firstName.addEventListener("input", (e) => {
+    if (firstName.validity.valid) {
+        errorSpan.textContent = ""
+    }
+    else {
+        emptyString()
+    }
+})
 
-
+form.addEventListener("submit", (event) => {
+    // if the email field is valid, we let the form submit
+    if (!firstName.validity.valid) {
+      // If it isn't, we display an appropriate error message
+      showError();
+      // Then we prevent the form from being sent by canceling the event
+      event.preventDefault();
+    }
+  });
 
 
 

@@ -120,3 +120,11 @@ span {
     position: relative;
     top: 4vh;
 }
+
+.error {
+    width: 100%;
+    top: 0px;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+}
+
