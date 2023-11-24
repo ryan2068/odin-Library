@@ -40,7 +40,7 @@ addBookButton.addEventListener("click", function(e) {
 
 
 
-
+console.log("this is connected to github")
 
 
 
@@ -166,10 +166,3 @@ function Book(title, author, pages, isRead) {
 
 
 }
-
-
-
-
-
-
-
