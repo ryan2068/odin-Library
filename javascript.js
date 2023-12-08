@@ -7,7 +7,9 @@ read = document.querySelector("#yes")
 isNotRead = document.querySelector("#no")
 isRead = document.getElementsByName("is-read")
 addBookButton = document.querySelector(".add-book-button")
-errorSpan = document.querySelector('.error')
+errorSpan1 = document.querySelector('.error1')
+errorSpan2 = document.querySelector('.error2')
+errorSpan3 = document.querySelector('.error3')
 cardContainer = document.createElement("div")
 cardContainer.classList.add("card-container")
 document.body.appendChild(cardContainer)
@@ -40,18 +42,35 @@ addBookButton.addEventListener("click", function(e) {
 })
 
 
-function emptyString () {
-    if (firstName.validity.valueMissing) {
-        errorSpan.textContent = 'Please enter more than 1 character.'
-    }
+function emptyString (span) {
+    span.textContent = 'Please enter more than 1 character.'
+    span.className = "error active"
 }
 
 firstName.addEventListener("input", (e) => {
-    if (firstName.validity.valid) {
-        errorSpan.textContent = ""
+    if (firstName.validity.valid ) {
+        errorSpan1.textContent = ""
     }
     else {
-        emptyString()
+        emptyString(errorSpan1)
+    }
+})
+
+lastName.addEventListener("input", (e) => {
+    if (lastName.validity.valid) {
+        errorSpan2.textContent = ""
+    }
+    else {
+        emptyString(errorSpan2)
+    }
+})
+
+pages.addEventListener("input", (e) => {
+    if (pages.validity.valid) {
+        errorSpan3.textContent = ""
+    }
+    else {
+        emptyString(errorSpan3)
     }
 })
 
@@ -59,9 +78,9 @@ form.addEventListener("submit", (event) => {
     // if the email field is valid, we let the form submit
     if (!firstName.validity.valid) {
       // If it isn't, we display an appropriate error message
-      showError();
+      emptyString(errorSpan1);
       // Then we prevent the form from being sent by canceling the event
-      event.preventDefault();
+      event.preventDefault()
     }
   });
 
@@ -168,12 +187,6 @@ form.addEventListener('submit', (e) => {
     
 
 })
-
-
-
-
-
-
 
 function Book(title, author, pages, isRead) {
     this.title = title

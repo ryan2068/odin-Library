@@ -7,17 +7,17 @@
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-  <form class="hidden" action="">
+  <form class="hidden" action="" novalidate>
     <div class="form-container-1">
       <label>Input your <em>first name</em> below!</label>
-      <input id="first-name" type="text" id="first-name" name="name" placeholder="John...">
-      <span class="error">error</span>
+      <input id="first-name" type="text" id="first-name" name="name" placeholder="John..." minlength="1" required>
+      <span class="error1" aria-live="polite"></span>
       <label for="last-name">Input your <em>last name</em> below!</label>
-      <input class="input" type="text" id="last-name" name="name" placeholder="Smith...">
-      <span class="error">error</span>
+      <input class="input" type="text" id="last-name" name="name" placeholder="Smith..." minlength="0" required>
+      <span class="error2"></span>
       <label for="pages">Input the number of <em>pages</em> below!</label>
-    <input class="input" type="text" id="pages" name="pages" placeholder="381...">
-    <span class="error">error</span>
+    <input class="input" type="text" id="pages" name="pages" placeholder="381..." minlength="0" required>
+    <span class="error3"></span>
     </div>
     <div class="form-container-2">  
       <label class="large-label" for="yes">Have you read this book?</label>

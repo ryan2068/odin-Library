@@ -17,7 +17,7 @@ body, html {
     flex-direction: column;
     gap: 2rem;
     padding: 1rem;
-    background: linear-gradient(#f9a7a7, #828ade);
+    background: linear-gradient(#a7e7f9, #828ade);
 
 }
 
@@ -106,11 +106,7 @@ form {
 
 
 
-span {
-    width: 30px;
-    position: relative;
-    top: 2vh;
-}
+
 
 .NotReadStatus {
     position: relative;
@@ -121,10 +117,31 @@ span {
     top: 4vh;
 }
 
-.error {
+.error1 {
     width: 100%;
     top: 0px;
     border-radius: 0 0 5px 5px;
     box-sizing: border-box;
 }
+
+
+input:invalid {
+    border-color: rgb(255, 124, 124);
+    background-color: rgb(255, 252, 252);
+}
+  
+input:focus:invalid {
+    outline: none;
+}
+
+.error {
+    width: 100%;
+    padding: 0;
+    font-size: 80%;
+    color: white;
+    background-color: rgb(189, 14, 14);
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+}
+
 
